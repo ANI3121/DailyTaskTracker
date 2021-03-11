@@ -9,6 +9,7 @@ import UIKit
 
 class TaskTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var endTimeLabel: UILabel!
     @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var startTimeLabel: UILabel!
@@ -20,6 +21,10 @@ class TaskTableViewCell: UITableViewCell {
     }
     
     func configureCellView() {
+        containerView.layer.cornerRadius = 10
+        containerView.clipsToBounds = true
+        containerView.layer.shadowRadius = 10
+        containerView.layer.borderWidth = 1.0
         statusLabel.layer.cornerRadius = 5.0
         statusLabel.layer.borderWidth = 0.5
         statusLabel.clipsToBounds = true
